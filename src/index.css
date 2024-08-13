@@ -1,13 +1,209 @@
+:root {
+  --background-color-light: #ffffff;
+  --background-color-dark: #2c3e50;
+  --text-color-light: #000000;
+  --text-color-dark: #ecf0f1;
+  --orange-color: #CE8E47;
+  --dark-orange-color:#B46C22;
+  --brown-color: #843802;
+  --skin-color: #ECD1A5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+.carousel .control-dots .dot {
+  background: #843802 !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ECD1A5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brown-color);
+  border-radius: 50px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+  background: var(--skin-color);
+  background: radial-gradient(at center, #ffffff, var(--skin-color));
+  color: var(--text-color-light);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body.dark-mode {
+  background: var(--background-color-dark) !important;
+  color: var(--text-color-dark);
+}
+
+body.dark-mode h2, body.dark-mode h3{
+  color: var(--text-color-dark) !important;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--orange-color);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.header.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.logo {
+  height: 40px; /* Ajusta el tamaño según sea necesario */
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px; /* Asegúrate de que el contenido no quede debajo del header */
+  padding: 20px;
+  height: calc(100vh - 60px); /* Ajusta la altura para el contenido principal */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es grande */
+}
+
+.master-list {
+  height: 90vh;
+  width: 20%;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.master-list h3 {
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0;
+  color: #5c2702;
+}
+
+.master-list div {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #0000000f;
+  cursor: pointer;
+}
+
+.master-list input {
+  width: 80% !important;
+  margin-bottom: 20px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: 0;
+  font-size: 16px;
+}
+
+.header.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.detail-view {
+  padding: 20px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.evolution-info {
+  margin-top: 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.tcg-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tcg-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 20%;
+  margin: 0 2%;
+  background: #FFFFFF;
+  padding: 0 25px;
+  box-shadow: 10px 0px 10px -9px #0000004f;
+}
+
+.tcg-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.tcg-card h4 {
+  font-size: 14px;
+}
+
+.tcg-card-group {
+  display: flex;
+}
+
+.carousel-root {
+  overflow: hidden;
+}
+
+.message {
+  width: 100%;
+  text-align: center;
+  line-height: 40em;
+}
+
+.detail-view h2 {
+  text-transform: capitalize;
+  font-size: 2em;
+}
+
+.info {
+  width: 20%;
+}
+
+.imagen img {
+  width: 60% !important;
+  margin: 0 auto;
+  display: block;
 }
